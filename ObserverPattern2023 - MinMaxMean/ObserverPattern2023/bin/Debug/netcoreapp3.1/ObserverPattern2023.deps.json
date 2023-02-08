@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "ObserverPattern2023/1.0.0": {
+        "runtime": {
+          "ObserverPattern2023.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ObserverPattern2023/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
