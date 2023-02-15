@@ -4,57 +4,112 @@ using UnityEngine;
 
 public class GenerateMaze : MonoBehaviour
 {
-    public void InstantiateMap()
+
+    public int width = 100;
+    public int height = 100;
+    int[,] map = new int[100,100];
+    public GameObject cube;
+
+    // Start is called before the first frame update
+    void Start()
     {
+        map = new int[width, height];
+        InstantiateMap();
+        map[0,0] = 0;
+        Generate();
+        DrawMap();
 
-        int[,] array = new int[20, 20];
+    }
 
-        for (int i = 0; i < 20; i++)
+
+    void InstantiateMap()
+    {
+        // fill a two dimensional array with all 1's
+        int x = 0;
+        int z = 0;
+
+        while(z < 100)
         {
-            for (int j = 0; j < 20; j++)
+            while(x < 100)
             {
-                array[i, j] = 1;
+                map[x, z] = 1;
+                x = x + 1;
+                
             }
+            
+            z = z + 1;
+            x = 0;
         }
 
-
     }
-
-    public void DrawMap()
+    void DrawMap()
     {
+        // everywhere there is a 1, put a cube
+        int x = 0;
+        int z = 0;
 
-
-
-
-
-    }
-
-    public GameObject cube;
-    // Start is called before the first frame update
-    void Start()
-    {
-        int width = 20;
-        int height = 20; 
-        int x = 0; 
-        int z = 0; 
-
-        while (z < height)
+        while (z < 100)
         {
-            while (x < width)
+            while (x < 100)
             {
-                Vector3 pos = new Vector3(x, 0, z);
-                Instantiate(cube, pos, Quaternion.identity);
+                if(map[x, z] == 1)
+                {
+                    Vector3 pos = new Vector3(x, 0, z);
+                    //GameObject wall = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    //wall.transform.position = pos;
+
+                    Instantiate(cube, pos, Quaternion.identity);
+                }
                 x = x + 1;
             }
             z = z + 1;
             x = 0;
+            
         }
-    }     
-    
-    
-    // Update is called once per frame
-    void Update()
-    {
+    }
 
+    void Generate()
+    {
+        // fill a two dimensional array with all 1's
+        int x = width / 2;
+        int z = 0;
+       
+
+        map[x, z] = 0;
+        
+
+        while (x != height && z!= width) {
+
+            Random random = new Random();
+
+            int randomNum = random.Next(1, 100);
+            
+
+            while (randomNum < 33)
+            {
+                map[x, z] = 0;
+                z++;
+            }
+
+            while (randomNum > 33)
+            {
+                map[x, z] = 0;
+                x++;
+            }
+
+            while (randomNum > 66 && randomNum < 100)
+            {
+                map[x, z] = 0;
+                z++;
+            }
+
+
+
+        }
+
+
+
+
+        
     }
 }
