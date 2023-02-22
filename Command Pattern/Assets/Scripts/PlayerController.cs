@@ -5,10 +5,16 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Vector3 playerPos;
-    private void Start()
+
+     private Vector3 playerPos1;
+    private Vector3 playerPosEnd;
+    private void Start() 
     {
         playerPos = this.gameObject.GetComponent<Transform>().position;
         Debug.Log(playerPos);
+    }
+    private void Update() {
+        playerPos = this.gameObject.GetComponent<Transform>().position;
     }
     public void MoveLeft()
     {
@@ -24,9 +30,34 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.forward);
 
     }
+
+     public void MoveBackward()
+    {
+        transform.Translate(Vector3.back);
+
+    }
+
+
     public void ResetPosition()
     {
         transform.position = playerPos;
 
     }
+
+   
+
+    public void GetLastPos()
+    {
+       
+            playerPos1 = playerPos; ;
+    }
+
+    public void PushLastPos() {
+            transform.position = playerPos1;
+    }
+
+
+ 
+
+
 }

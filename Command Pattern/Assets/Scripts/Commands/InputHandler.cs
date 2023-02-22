@@ -7,6 +7,7 @@ public class InputHandler : MonoBehaviour
     private Invoker invoker;
     private bool isRecording;
     private bool isReplaying;
+    private bool isReversed;
     private PlayerController playerController;
     private Command buttonA, buttonD, buttonW;
 
@@ -39,17 +40,26 @@ public class InputHandler : MonoBehaviour
     {
         if (GUILayout.Button("Start Recording"))
         {
-            // playerController.ResetPosition();
+            
             isReplaying = false;
             isRecording = true;
+            
+             isReversed = false;
             invoker.Record();
+
+            playerController.GetLastPos();
+
         }
 
         if (GUILayout.Button("Stop Recording"))
         {
-            playerController.ResetPosition();
+          
             isReplaying = false;
             isRecording = false;
+            isReversed = false;
+
+          
+            
         }
 
 
@@ -57,17 +67,22 @@ public class InputHandler : MonoBehaviour
         {
             if (GUILayout.Button("Start Replaying"))
             {
-                playerController.ResetPosition();
+            
                 isReplaying = true;
                 isRecording = false;
+                isReversed = false;
+                
                 invoker.Replay();
             }
             if (GUILayout.Button("Reverse"))
             {
-               isReplaying = true;
+                
+                isReplaying = false;
                 isRecording = false;
+                isReversed = false;
                 invoker.Reverse();
             }
+           
         }
     }
 }

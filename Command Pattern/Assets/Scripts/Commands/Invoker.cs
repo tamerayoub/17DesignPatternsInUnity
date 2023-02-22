@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
+using System.Threading;
 
 public class Invoker : MonoBehaviour
 {
@@ -18,6 +20,9 @@ public class Invoker : MonoBehaviour
     }
     public void Record()
     {
+
+
+        recordCommands.Clear(); // this refreshes the list new everytime you hit record
         isRecording = true;
     }
     public void Replay()
@@ -36,10 +41,20 @@ public class Invoker : MonoBehaviour
             }
             isReplaying = false;
         }
+
+        
     }
 
     public void Reverse()
     {
 
+   
+    for (int a = recordCommands.Count - 1; a >= 0; a--) {
+            
+             recordCommands[a].Undo(); 
+             
+            
     }
+    
+}
 }

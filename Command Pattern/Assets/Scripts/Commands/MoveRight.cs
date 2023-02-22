@@ -14,4 +14,8 @@ public class MoveRight : Command
     {
         this.controller.MoveRight();
     }
+     public override void Undo()
+    {
+        this.controller.MoveLeft();
+    }
 }
