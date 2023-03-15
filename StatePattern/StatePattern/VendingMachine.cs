@@ -8,7 +8,7 @@ namespace StatePattern
 {
     public class VendingMachine
     {
-
+     
         private State state = new NoCoin();
         private int numberOfItems = 10;
         public State State
