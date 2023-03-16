@@ -16,9 +16,11 @@ public class ClientObjectPool : MonoBehaviour
     // Update is called once per frame
     void OnGUI()
     {
-        if(GUILayout.Button("Spawn Dinos"))
+        if (GUILayout.Button("Spawn Dinos"))
         {
             pool.Spawn();
         }
     }
 }
+
+// we put this script on the game object

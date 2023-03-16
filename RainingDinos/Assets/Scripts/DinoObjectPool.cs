@@ -62,7 +62,7 @@ public class DinoObjectPool : MonoBehaviour
     {
         var amount = Random.Range(1, 10);
 
-        for(int i = 0; i < amount; i++)
+        for (int i = 0; i < amount; i++)
         {
             var dino = Pool.Get();
 
@@ -70,3 +70,6 @@ public class DinoObjectPool : MonoBehaviour
         }
     }
 }
+
+
+// this script handles spawning, creating, returning to pool, taking from pool, and destroying it after

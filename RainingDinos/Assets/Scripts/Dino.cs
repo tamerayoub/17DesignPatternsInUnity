@@ -57,10 +57,13 @@ public class Dino : MonoBehaviour
     {
         currentHealth = currentHealth - amount;
 
-        if(currentHealth <= 0.0f)
+        if (currentHealth <= 0.0f)
         {
             ReturnToPool();
         }
     }
 
 }
+
+
+// whats the difference between this and the dino object pool
