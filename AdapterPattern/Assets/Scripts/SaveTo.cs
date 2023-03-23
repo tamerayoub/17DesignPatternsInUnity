@@ -5,7 +5,7 @@ using System.IO;
 using Newtonsoft.Json;
 
 
-// this is our original class that needs to be adapted, this class saves "Hello World" to a CSV file
+// this is our original class that needs to be adapted, this class saves Class Participants to a CSV file
 public class SaveTo
 {
 
