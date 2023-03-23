@@ -24,8 +24,15 @@ public class ClientAdapter : MonoBehaviour
         saveTo = new SaveTo();
         saveToAdapter = new SaveToAdapter();
 
-        data.Add("Hello");
-        data.Add("World");
+        data.Add("Class Participants");
+        data.Add("Tamer Ayoub");
+        data.Add("Qusai Fannoun");
+        data.Add("Isaac Bustad");
+        data.Add("Simen Restad");
+        data.Add("Jonghyun Oh");
+        data.Add("Ryan Hix-Wilking");
+        data.Add("Luke Fradgley");
+        data.Add("Much more..");
     }
 
 
