@@ -22,7 +22,7 @@ public class InventorySystemAdaptor : InventorySystem, IInventorySystem
         }
         if (aLocation == SaveLocation.Local)
         {
-            Debug.Log("We need code here to save to local");
+
         }
         if (aLocation == SaveLocation.Both)
         {

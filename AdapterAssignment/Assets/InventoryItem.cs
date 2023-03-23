@@ -9,5 +9,6 @@ using UnityEngine;
 
 public class InventoryItem : ScriptableObject
 {
-
+    // placeholder class you will need to flesh this out for your assignment
+    // you can change it to a monster, or npc, or anything in your game
 }
