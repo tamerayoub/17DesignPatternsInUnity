@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sprint : SpeedAbility
+// one of the variances of sprinting, full sprint (child class)
+public class Sprint : AthleticAbility
 {
     public override void Activate()
     {
-        Speed(20);
+
+        // here is the different variation of the speed -> 4 
+        Speed(4);
         Debug.Log("sprint");
     }
 }
