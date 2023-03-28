@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
 {
     // Start is called before the first frame update
     HalfSprint halfSprint = new HalfSprint();
-    Sprint sprint = new Sprint();
+    FullSprint fullSprint = new FullSprint();
     FullJump fullJump = new FullJump();
     HalfJump halfJump = new HalfJump();
 
@@ -31,7 +31,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown("s"))
         {
             // call the child sprint class and activate a full sprint
-            sprint.Activate();
+            fullSprint.Activate();
         }
         if (Input.GetKeyDown("d"))
         {

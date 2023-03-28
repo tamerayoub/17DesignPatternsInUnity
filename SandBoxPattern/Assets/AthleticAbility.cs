@@ -11,7 +11,7 @@ public abstract class AthleticAbility
 
 
     // make sure this function is protected for child use
-    protected void Speed(float speed)
+    protected void Sprint(float speed)
     {
 
         // our parent function that takes speed from its child classes, and moves the player forward accordingly 
@@ -23,14 +23,14 @@ public abstract class AthleticAbility
 
     }
     // make sure this function is protected for child use
-    protected void Jump(float jump)
+    protected void Jump(float vertical)
     {
 
         // our parent function that takes speed from its child classes, and jumps the player
         GameObject player;
 
         player = GameObject.FindWithTag("Usain Bolt");
-        player.GetComponent<Rigidbody>().AddForce(jump * Vector3.up, ForceMode.VelocityChange);
+        player.GetComponent<Rigidbody>().AddForce(vertical * Vector3.up, ForceMode.VelocityChange);
 
 
     }

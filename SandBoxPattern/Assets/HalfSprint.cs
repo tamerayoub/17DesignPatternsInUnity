@@ -9,7 +9,7 @@ public class HalfSprint : AthleticAbility
     {
 
         // here is the different variation of the speed -> 1
-        Speed(1);
+        Sprint(1);
         Debug.Log("half sprint");
     }
 }
