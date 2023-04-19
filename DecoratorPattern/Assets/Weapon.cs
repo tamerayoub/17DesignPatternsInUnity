@@ -1,14 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System;
+
 
 public class Weapon : IWeapon
 {
-    private WeaponConfig config;
+    private readonly WeaponConfig config;
 
     public Weapon(WeaponConfig weaponConfig)
     {
-        this.config = weaponConfig;
+        config = weaponConfig;
     }
 
     public float Range
@@ -32,3 +32,4 @@ public class Weapon : IWeapon
     }
 
 }
+

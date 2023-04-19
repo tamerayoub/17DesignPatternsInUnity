@@ -1,38 +1,48 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
+using System;
 
 public class WeaponDecorator : IWeapon
 {
-
-    private IWeapon decorateWeapon;
-    private WeaponAttachment attachment;
+    private readonly IWeapon decoratedWeapon;
+    private readonly WeaponAttachment attachment;
 
     public WeaponDecorator(IWeapon weapon, WeaponAttachment anAttachment)
     {
-        this.decoratedWeapon = aWeapon;
+        this.decoratedWeapon = weapon;
         this.attachment = anAttachment;
-    }
-
-
-    public float Range
-    {
-        get { return decoratedWeapon.range + attachment.Range; }
     }
 
     public float Rate
     {
-        get { return decoratedWeapon.rate + attachment.Rate; }
+        get
+        {
+            return decoratedWeapon.Rate + attachment.Rate;
+        }
+    }
+
+    public float Range
+    {
+        get
+        {
+            return decoratedWeapon.Range + attachment.Range;
+        }
     }
 
     public float Strength
     {
-        get { return decoratedWeapon.strength + attachment.Strength; }
+        get
+        {
+            return decoratedWeapon.Strength + attachment.Strength;
+        }
     }
 
     public float Cooldown
     {
-        get { return decoratedWeapon.cooldown + attachment.Cooldown; }
+        get
+        {
+            return decoratedWeapon.Cooldown + attachment.Cooldown;
+        }
     }
-
 }
+

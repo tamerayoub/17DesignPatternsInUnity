@@ -1,45 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ClientDecorator : MonoBehaviour
 {
+    private BikeWeapon bikeWeapon;
+    private bool isWeaponDecorated;
 
-    // start is calle
-
-    // Start is called before the first frame update
     void Start()
     {
-        shipWeapon = (ShipWeapon)FindObjectOfType(typeof(ShipWeapon));
+        bikeWeapon = (BikeWeapon) FindObjectOfType(typeof(BikeWeapon));
     }
 
     void OnGUI()
     {
-        if (!isWeaponDecorated == true)
-        {
-            if (GUILayout.Button("Decorated Weapon"))
+        if (!isWeaponDecorated)
+            if (GUILayout.Button("Decorate Weapon"))
             {
-                shipWeapon.Decorate();
+                bikeWeapon.Decorate();
                 isWeaponDecorated = !isWeaponDecorated;
             }
-        }
 
-        if (isWeaponDecorated == true)
-        {
+        if (isWeaponDecorated)
             if (GUILayout.Button("Reset Weapon"))
             {
-                shipWeapon.Reset();
+                bikeWeapon.Reset();
                 isWeaponDecorated = !isWeaponDecorated;
             }
-        }
-
-
 
         if (GUILayout.Button("Toggle Fire"))
-        {
-            shipWeapon.ToggleFire();
-        }
-
-
+            bikeWeapon.ToggleFire();
     }
 }
+

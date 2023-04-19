@@ -1,35 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-[CreateAssetMenu(filename = "NewWeaponAttachment", menuName = "Weapon/Attachment".order = 1)]
+
+[CreateAssetMenu(fileName = "NewWeaponAttachment", menuName = "Weapon/Attachment", order = 1)]
+
 public class WeaponAttachment : ScriptableObject, IWeapon
 {
-    [Range(0, 100)]
-    [Tooltip("Weapon Range")]
-    [SerializeField] private float range;
+    [Range(0, 50)]
+    [Tooltip("Increase rate of firing per second")]
+    [SerializeField] public float rate;
+
+    [Range(0, 50)]
+    [Tooltip("Increase weapon range")]
+    [SerializeField] float range;
 
     [Range(0, 100)]
-    [Tooltip("Weapon Strength")]
-    [SerializeField] private float strength;
+    [Tooltip("Increase weapon strength")]
+    [SerializeField] public float strength;
 
-    [Range(-5, 5)]
-    [Tooltip("Cooldown duration")]
-    [SerializeField] private float rate;
-
+    [Range(0, -5)]
+    [Tooltip("Reduce cooldown duration")]
+    [SerializeField] public float cooldown;
 
     public string attachmentName;
+    public GameObject attachmentPrefab;
     public string attachmentDescription;
-
-
-    public float Range
-    {
-        get { return range; }
-    }
 
     public float Rate
     {
         get { return rate; }
+    }
+
+    public float Range
+    {
+        get { return range; }
     }
 
     public float Strength
@@ -41,5 +45,5 @@ public class WeaponAttachment : ScriptableObject, IWeapon
     {
         get { return cooldown; }
     }
-
 }
+
